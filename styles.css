@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Hind+Siliguri&family=Inder&family=Oswald&family=Poppins&display=swap');
+
+/*
+font-family: 'Arima Madurai', cursive;
+font-family: 'Inder', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+:root {
+    --primary-gold: #F2BB10;
+    --primary-red: #b10a03;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url(bg.png);
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: cover;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
