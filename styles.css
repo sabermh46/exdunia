@@ -24,6 +24,35 @@ body {
     background-position-x: center;
     background-size: cover;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 300px;
 }
 
+
+.sec1 {
+    background: rgba(255, 250, 199, 0.858);
+    font-family: 'Hind Siliguri', sans-serif;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 12;
+}
+.sec1 .ques {
+    padding: 10px;
+    font-size: 130%;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.535);
+}
+.sec1 .ans {
+    padding: 10px;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.535);
+}
+.sec1 .foot {
+    padding: 10px;
+    text-align: center;
+}

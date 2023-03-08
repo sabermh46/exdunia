@@ -126,7 +126,7 @@ const sheet = new CSSStyleSheet();
             link: './offer.html'
         },
         {
-            page: 'Quize Winner',
+            page: 'Quiz Winner',
             link: '#'
         },
         {
