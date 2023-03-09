@@ -8,6 +8,7 @@ font-family: 'Poppins', sans-serif;
 :root {
     --primary-gold: #F2BB10;
     --primary-red: #b10a03;
+    --light-bg: rgba(255, 250, 199, 0.858);
 }
 html {
     scroll-behavior: smooth;
@@ -30,7 +31,7 @@ body {
 
 
 .sec1 {
-    background: rgba(255, 250, 199, 0.858);
+    background: var(--light-bg);
     font-family: 'Hind Siliguri', sans-serif;
     width: calc(100% - 40px);
     max-width: 1000px;
@@ -104,4 +105,96 @@ body {
     height: 90%;
     margin: auto auto;
     border-radius: 12px;
+}
+
+
+
+
+.container {
+    font-family: 'Hind Siliguri', sans-serif;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 12;
+    overflow: hidden;
+}
+
+.container .heading {
+    font-size: 35px;
+    text-align: center;
+    font-weight: 900;
+    padding: 20px 0px;
+    border-radius: 16px 16px 0 0;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.229);
+    background: var(--primary-gold);
+}
+.container > .details {
+    background: var(--light-bg);
+    padding: 10px;
+    text-align: justify;
+    border-radius: 0 0 16px 16px;
+}
+span.red {
+    color: var(--primary-red);
+}
+
+
+.card {
+    
+}
+
+.card_head {
+    background: var(--primary-gold);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    z-index: 9;
+    position: relative;
+}
+
+.card .dets {
+    background: var(--light-bg);
+    padding: 10px;
+    padding-top: 30px;
+    border-radius: 16px;
+    translate: 0 -20px;
+    z-index: 5;
+}
+
+.card .dets .item {
+    padding: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+.card .dets .item .head {
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.card .dets .item::before {
+    content: "";
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    background: var(--primary-red);
+    top: 16px;
+    left: 5px;
+}
+.card .dets .item::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    background: var(--primary-red);
+    border-radius: 50%;
+    top: 14px;
+    left: -1.5px;
+}
+.card .dets .item:last-child:before {
+    content: none;
 }
