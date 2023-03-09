@@ -111,47 +111,47 @@ const sheet = new CSSStyleSheet();
     var pages = [
         {
             page: 'Home',
-            link: '/'
+            link: './index.html'
         },
         {
             page: 'Proxy',
-            link: '/proxy.html'
+            link: './proxy.html'
         },
         {
             page: 'Master',
-            link: '/master.html'
+            link: './master.html'
         },
         {
             page: 'Offer',
-            link: '/offer.html'
+            link: './offer.html'
         },
         {
             page: 'Quiz Winner',
-            link: '/quiz_winner.html'
+            link: './quiz_winner.html'
         },
         {
             page: 'Cricket Penalty',
-            link: '/cricket_penalty.html'
+            link: './cricket_penalty.html'
         },
         {
             page: 'List',
-            link: '/list.html'
+            link: './list.html'
         },
         {
             page: 'All Links',
-            link: '/all_links.html'
+            link: './all_links.html'
         },
         {
             page: 'News',
-            link: '/news.html'
+            link: './news.html'
         },
         {
             page: 'eSports',
-            link: '/esports.html'
+            link: './esports.html'
         },
         {
             page: 'Scocial',
-            link: '/social.html'
+            link: './social.html'
         }
     ]
 
@@ -193,11 +193,20 @@ class BurgerMenu extends HTMLElement {
 
 
         var path = window.location.pathname;
-        pages.forEach((page, i)=>{
-            if(page.link == path){
-                links[i].classList.add('active');
-            }
-        })
+        var sp = path.split('/')
+        var cSp = sp[sp.length-1]
+
+        console.log(sp[sp.length-1]);
+
+        if(cSp == ''){
+            links[0].classList.add('active');
+        } else {
+            pages.forEach((page, i)=>{
+                if(page.link == `./${cSp}`){
+                    links[i].classList.add('active');
+                }
+            })
+        }
 
     }
 
