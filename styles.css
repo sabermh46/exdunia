@@ -33,10 +33,12 @@ body {
     background: rgba(255, 250, 199, 0.858);
     font-family: 'Hind Siliguri', sans-serif;
     width: calc(100% - 40px);
+    max-width: 1000px;
     margin: 0 auto;
     border-radius: 12px;
     position: relative;
     z-index: 12;
+    overflow: hidden;
 }
 .sec1 .ques {
     padding: 10px;
@@ -44,6 +46,7 @@ body {
     text-align: left;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.535);
+    background: var(--primary-gold);
 }
 .sec1 .ans {
     padding: 10px;
@@ -56,4 +59,49 @@ body {
 .sec1 .foot {
     padding: 10px;
     text-align: center;
+}
+
+.sites {
+    background: rgba(255, 250, 199, 0.858);
+    font-family: 'Hind Siliguri', sans-serif;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 2px solid var(--primary-gold);
+    position: relative;
+    z-index: 12;
+    overflow: hidden;
+}
+.sites .head {
+    background: var(--primary-gold);
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.sites .site_links {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.sites .site_links a {
+    height: 158px;
+    width: 158px;
+    display: flex;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+.sites .site_links a:hover {
+    border: 3px solid var(--primary-red);
+}
+.sites .site_links a img {
+    width: 90%;
+    height: 90%;
+    margin: auto auto;
+    border-radius: 12px;
 }

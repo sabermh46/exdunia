@@ -9,6 +9,11 @@ const sheet = new CSSStyleSheet();
             padding: 10px 20px;
             border-radius: 8px;
             display: inline-block;
+            transition: 0.5s ease;
+        }
+        a:hover {
+            background: black;
+            color: var(--primary-gold);
         }
     `)
 

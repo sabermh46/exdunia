@@ -111,47 +111,47 @@ const sheet = new CSSStyleSheet();
     var pages = [
         {
             page: 'Home',
-            link: './index.html'
+            link: '/'
         },
         {
             page: 'Proxy',
-            link: './proxy.html'
+            link: '/proxy.html'
         },
         {
             page: 'Master',
-            link: './master.html'
+            link: '/master.html'
         },
         {
             page: 'Offer',
-            link: './offer.html'
+            link: '/offer.html'
         },
         {
             page: 'Quiz Winner',
-            link: '#'
+            link: '/quiz_winner.html'
         },
         {
             page: 'Cricket Penalty',
-            link: '#'
+            link: '/cricket_penalty.html'
         },
         {
             page: 'List',
-            link: '#'
+            link: '/list.html'
         },
         {
-            page: 'All Link',
-            link: '#'
+            page: 'All Links',
+            link: '/all_links.html'
         },
         {
             page: 'News',
-            link: '#'
+            link: '/news.html'
         },
         {
             page: 'eSports',
-            link: '#'
+            link: '/esports.html'
         },
         {
             page: 'Scocial',
-            link: '#'
+            link: '/social.html'
         }
     ]
 
@@ -177,48 +177,26 @@ template.innerHTML = `
 class BurgerMenu extends HTMLElement {
     constructor() {
         super();
-        this.isClicked = false
         this.shadow = this.attachShadow({ mode: "open"})
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.isClicked = false
     }
 
     connectedCallback() {
         this.shadow.adoptedStyleSheets = [sheet]
 
-        var current_link = window.localStorage.getItem('a_link');
         var links = this.shadowRoot.querySelectorAll('.links .link')
-
-        links.forEach((link, i)=>{
-            link.classList.remove('active')
-        })
         
-
-        pages.forEach((p, i)=>{
-            if(p.page == current_link) {
-                console.log(p.page, current_link)
-                links[i].classList.add('active');
-            }
-        })
-
         this.shadowRoot.querySelector('.menu .burger').addEventListener('click', ()=>{
             this.shadowRoot.querySelector('.menu').classList.toggle('active')
         })
 
-        
 
-        
 
-        links.forEach((link, i)=>{
-            link.addEventListener('click', ()=>{
-
-                links.forEach((link, i)=>{
-                    link.classList.remove('active')
-                })
-
-                link.classList.add('active')
-                window.localStorage.setItem('a_link', link.textContent)
-            })
+        var path = window.location.pathname;
+        pages.forEach((page, i)=>{
+            if(page.link == path){
+                links[i].classList.add('active');
+            }
         })
 
     }

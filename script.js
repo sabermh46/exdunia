@@ -15,6 +15,6 @@ customElements.define("open-land", OpenLand)
 customElements.define("my-btn", MyBtn)
 
 
-if(window.localStorage.getItem('a_link') == null) {
-    window.localStorage.setItem('a_link', 'home')
-}
+// if(window.localStorage.getItem('a_link') == null) {
+//     window.localStorage.setItem('a_link', 'home')
+// }
