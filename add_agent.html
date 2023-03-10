@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Dunia || Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav-bar></nav-bar>
+    
+
+    <div class="container">
+        <form class="form">
+            <h2>Add an Agent</h2>
+
+            <div class="input">
+                <div class="lable">
+                    Prefix name :
+                </div>
+                <input type="text" name="" id="pre_name" required>
+            </div>
+
+            <div class="input">
+                <div class="lable">
+                    Agent Id :
+                </div>
+                <input type="text" name="" id="age_id" required placeholder="Ex: 1234">
+            </div>
+
+            <div class="input">
+                <div class="lable">
+                    Whats App Number :
+                </div>
+                <input type="text" name="" id="wa_num" required>
+            </div>
+
+            <div class="input">
+                <div style="padding-bottom: 5px;">
+                    Agent Type :
+                </div>
+                <div class="dual">
+                    <div class="op">
+                        <input type="radio" value="Local Agent" name="agent_type" id="ab" checked>
+                        <label for="ab">Local Agent</label>
+                    </div>
+                    <div class="op">
+                        <input type="radio" value="Master Agent" name="agent_type" id="cd">
+                        <label for="cd">Master Agent</label>
+                    </div>
+                </div>
+            </div>
+
+            <input type="button" value="Add Agent" id="submit">
+
+        </form>
+    </div>
+
+    <style>
+        body {
+            padding-top: 150px;
+        }
+
+        
+
+        form.form {
+            background: rgb(255, 255, 255);
+            padding: 15px;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 16px;
+        }
+
+        div.input input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-top: 5px;
+            border: none;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.154);
+        }
+        div.dual {
+            display: flex;
+        }
+        div.dual .op {
+            flex: 1;
+        }
+        div.dual .op label {
+            display: block;
+            border-radius: 4px;
+            padding: 10px 0;
+            transition: 0.2s ease;
+        }
+
+        input:checked ~ label{
+            background: var(--primary-red);
+            font-weight: bold;
+            color: white;
+        }
+        input:checked ~ label{
+            background: var(--primary-red);
+            font-weight: bold;
+            color: white;
+        }
+        .op input {
+            display: none;
+        }
+        .op label {
+            width: 100% !important;
+            text-align: center;
+        }
+        #submit {
+            background: var(--primary-gold);
+            border: none;
+            font-size: 22px;
+            padding: 15px 0;
+            border-radius: 8px;
+            font-family: 'Inder', sans-serif;
+            font-weight: 600;
+        }
+    </style>
+
+    <script type="module" src="./add_agent.js">
+    </script>
+
+    
+    <ro-tor></ro-tor>
+
+    <script src="./script.js" type="module"></script>
+
+</body>
+</html>

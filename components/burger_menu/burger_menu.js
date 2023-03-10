@@ -118,8 +118,8 @@ const sheet = new CSSStyleSheet();
             link: './proxy.html'
         },
         {
-            page: 'Master',
-            link: './master.html'
+            page: 'Agent List',
+            link: './agent_list.html'
         },
         {
             page: 'Offer',
@@ -132,10 +132,6 @@ const sheet = new CSSStyleSheet();
         {
             page: 'Cricket Penalty',
             link: './cricket_penalty.html'
-        },
-        {
-            page: 'List',
-            link: './list.html'
         },
         {
             page: 'All Links',

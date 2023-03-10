@@ -1,4 +1,5 @@
 
+
 const sheet = new CSSStyleSheet();
         sheet.replace(`
         div.rotor {
@@ -41,9 +42,6 @@ class Rotor extends HTMLElement {
             var y = window.scrollY
             this.rotateTheRotor(rotor, y)
         }
-
-        
-        
         
     }
 
