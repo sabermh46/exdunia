@@ -40,15 +40,29 @@ document.getElementById('pre_name').value = 'Agent No'
 
             var text = `${pre_name.value} ${age_id.value}`
 
-            var reff = collection(db, "users")
+            var reff = collection(db, "agents")
             const docRef = await addDoc(reff, {
                 text: text,
                 wa_num: wa_num.value,
                 agent_type: agent_type.value
             }).then(()=>{
-                alert('Data Added Successfully')
+
+                showSnack('Data Added Successfully')
+                age_id.value = ''
+                wa_num.value = ''
+                agent_type = ''
+
             }).catch(()=>{
-                alert('Data Added Failed')
+                showSnack('Something Went Wrong')
             })
 
         }
+        
+
+        function showSnack(mess){
+            var body = document.body;
+            var elem = document.createElement('sna-ck');
+            elem.setAttribute('title', mess)
+            body.appendChild(elem)
+        }
+

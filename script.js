@@ -6,6 +6,8 @@ import OpenLand from "./components/opening/opening.js"
 import Rotor from "./components/rotor/rotor.js"
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getFirestore, addDoc, collection, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js'
+import Snack from "./components/snack/snack.js"
+import AgentCard from "./components/agent_card/agent_card.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyC0BigqDXq_tmwAWqtGi0FrccEmGpPa6X4",
@@ -21,24 +23,15 @@ const firebaseConfig = {
 
   const db = getFirestore();
 
-  const docRef = collection(db, "users");
-  const docSnap = await getDocs(docRef);
-  
-  docSnap.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
 
-  
-
-
-
+customElements.define("sna-ck", Snack)
 customElements.define("action-button", ActionButton)
 customElements.define("burger-menu", BurgerMenu)
 customElements.define("nav-bar", NavBar)
 customElements.define("ro-tor", Rotor)
 customElements.define("open-land", OpenLand)
 customElements.define("my-btn", MyBtn)
+customElements.define("agent-card", AgentCard)
 
 
 

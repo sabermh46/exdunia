@@ -10,6 +10,8 @@
 <body>
     
     <nav-bar></nav-bar>
+
+    
     
 
     <div class="container">
@@ -32,7 +34,7 @@
 
             <div class="input">
                 <div class="lable">
-                    Whats App Number :
+                    Whats App Number : (without + at starting)
                 </div>
                 <input type="text" name="" id="wa_num" required>
             </div>
@@ -61,6 +63,7 @@
     <style>
         body {
             padding-top: 150px;
+            overflow-x: hidden;
         }
 
         
@@ -123,15 +126,17 @@
             font-family: 'Inder', sans-serif;
             font-weight: 600;
         }
+        
     </style>
 
-    <script type="module" src="./add_agent.js">
-    </script>
+
+    
 
     
     <ro-tor></ro-tor>
 
     <script src="./script.js" type="module"></script>
-
+    <script type="module" src="./add_agent.js">
+    </script>
 </body>
 </html>
