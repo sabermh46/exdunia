@@ -4,35 +4,40 @@ const sheet = new CSSStyleSheet();
         sheet.replace(`
         a.agent_card {
             display: flex;
-            background: rgba(229, 229, 229, 0.90);
-            color: black;
-            font-family: 'Inder', sans-serif;
+
+            background: rgba(255, 255, 255, 0.33);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(6.2px);
+            -webkit-backdrop-filter: blur(6.2px);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+
+            color: white;
+            font-family: 'Poppins', sans-serif;
             text-decoration: none;
-            padding: 15px 0;
+            padding: 15px 10px;
             border-radius: 12px;
             -webkit-tap-highlight-color: transparent;
             transition: 0.3s ease;
             position: relative;
+            overflow: hidden;
         }
         a.agent_card:hover {
-            background: rgba(229, 229, 229, 0.97);
+            background: rgba(255, 255, 255, 0.50);
         }
         
         a.agent_card .icon, a.agent_card .arro {
             flex: 1;
         }
         a.agent_card .text {
-            flex: 4;
+            flex: 5;
             font-size: 20px;
-            font-weight: bold;
+            font-weight: normal;
+            text-shadow: 1px 2px 3px rgba(0,0,0,0.5);
         }
-        a.agent_card .icon, a.agent_card .arro, a.agent_card .text {
+        a.agent_card .arro, a.agent_card .text {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        a.agent_card .icon img {
-            width: 35px;
         }
         
         a.agent_card .arro div {
@@ -63,27 +68,21 @@ const sheet = new CSSStyleSheet();
         }
         a.agent_card .tooltip {
             position: absolute;
-            background: rgba(0, 0, 0, 0.276);
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 0 0 6px 6px;
             top: 0;
-            left: 15%;
+            left: -4px;
             color: white;
-            font-size: 12px;
+            font-size: 10px;
             padding: 0px 10px 2px 10px;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 1px;
-        }
-        a.agent_card.master .tooltip {
-            background: rgb(255, 251, 39);
-            color: rgb(0, 0, 0);
-            font-size: 13px;
         }
     `)
 
 const template = document.createElement("template")
 template.innerHTML = `
     <a href="" class="agent_card">
-        <div class="icon"><img src="./icons/wa.png" alt="Whats App Icon"></div>
         <div class="text"></div>
         <div class="arro"><div></div></div>
         <span class="tooltip"></span>

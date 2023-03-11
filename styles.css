@@ -231,8 +231,8 @@ div.verified_agent {
 }
 
 div.supers {
-    background: var(--primary-red);
-    color: white;
+    background: white;
+    color:var(--primary-red);
     display: flex;
     padding: 15px;
     border-radius: 16px;
