@@ -20,6 +20,8 @@ const firebaseConfig = {
 
   const docRef = collection(db, "agents");
   const docSnap = await getDocs(docRef);
+
+  var count = 0;
   
   docSnap.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
@@ -27,6 +29,7 @@ const firebaseConfig = {
 
     var datas = doc.data()
 
+    count++
     var card = document.createElement('agent-card')
     card.setAttribute('link', datas.wa_num)
     card.setAttribute('text', datas.text)
@@ -35,4 +38,5 @@ const firebaseConfig = {
     all_list.append(card)
   });
 
+  document.getElementById('totalAgent').textContent = count
 
