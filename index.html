@@ -35,8 +35,124 @@
         </div>
     </div>
 
+    <div style="height: 30px;"></div>
 
-    <div style="height: 200vh;">
+    <div class="container">
+        <div class="gallery">
+            <div class="frames">
+                <div class="slider">
+                    <img src="https://i.ibb.co/6RGtg7q/1004545-bcci-ipl.jpg" alt="1004545-bcci-ipl" border="0">
+                    <img src="https://i.ibb.co/9YFbWvB/IPL-telecast-1645489243032-1645489243376.jpg" alt="IPL-telecast-1645489243032-1645489243376" border="0">
+                    <img src="https://i.ibb.co/MS3Qgyq/images-q-tbn-ANd9-Gc-Qm-ELUVCtx-IFCUYIbt-QYlo-Q4d-KFea-KOkao9-KA-usqp-CAU.jpg" alt="images-q-tbn-ANd9-Gc-Qm-ELUVCtx-IFCUYIbt-QYlo-Q4d-KFea-KOkao9-KA-usqp-CAU" border="0">
+                    <img src="https://i.ibb.co/B6mTLmP/images-q-tbn-ANd9-Gc-TCfw-Ug-Kia-Hb-DNAl-YPp-4i-TACdbh-Xiv-Cftj-Hw-usqp-CAU.jpg" alt="images-q-tbn-ANd9-Gc-TCfw-Ug-Kia-Hb-DNAl-YPp-4i-TACdbh-Xiv-Cftj-Hw-usqp-CAU" border="0">
+                </div>
+            </div>
+            <div class="controlls">
+                <div class="left_btn">
+
+                </div>
+
+                <div class="indexes"></div>
+
+                <div class="right_btn">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var frame = document.querySelector('.gallery .frames')
+        var frame_wd = frame.getBoundingClientRect().width
+        var slider = document.querySelector('.gallery .frames .slider')
+
+        var imgs = document.querySelectorAll('.gallery .frames .slider img')
+        var indexar = document.querySelector('.gallery .controlls .indexes')
+        var leftBtn = document.querySelector('.controlls .left_btn');
+        var rightBtn = document.querySelector('.controlls .right_btn');
+
+        console.log(frame_wd)
+        console.log(slider)
+        console.log(leftBtn, rightBtn)
+
+        imgs.forEach(img =>{
+            img.style.width = frame_wd + 'px'
+
+            var div = document.createElement('div')
+            div.classList.add('item');
+            indexar.append(div)
+ 
+        })
+
+        var items = document.querySelectorAll('.gallery .controlls .indexes .item')
+        
+        items[0].classList.add('this')
+
+        var sliding_left = 0;
+        var index = 0;
+
+        var interval = setInterval(mySlider, 3000);
+
+        rightBtn.addEventListener("click", ()=>{
+            if(++index < imgs.length) {
+                slider.style.left = `-${index * frame_wd}px`
+            } else {
+                index = 0
+                slider.style.left = '0px'
+            }
+
+            interClear()
+            clearItemThis()
+            items[index].classList.add('this')
+
+        })
+        leftBtn.addEventListener("click", ()=>{
+            if(--index >= 0) {
+                slider.style.left = `-${index * frame_wd}px`
+            } else {
+                index = imgs.length - 1
+                slider.style.left = `-${index * frame_wd}px`
+            }
+
+            interClear()
+            clearItemThis()
+            items[index].classList.add('this')
+            
+        })
+
+        function mySlider(){
+            if(++index < imgs.length) {
+                slider.style.left = `-${index * frame_wd}px`
+            } else {
+                index = 0
+                slider.style.left = '0px'
+            }
+            
+            clearItemThis()
+            items[index].classList.add('this')
+        }
+
+        function clearItemThis(){
+            items.forEach(it=>{
+                it.classList.remove('this')
+            })
+        }
+
+        function interClear(){
+            clearInterval(interval)
+            interval = setInterval(mySlider, 3000)
+        }
+
+    </script>
+
+
+
+
+
+
+    <div style="height: 30px;">
 
     </div>
     

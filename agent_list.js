@@ -3,6 +3,7 @@ import { getFirestore, addDoc, collection, doc, getDocs } from 'https://www.gsta
 
 var all_list = document.querySelector('.container.all_list')
 
+all_list.style.minHeight = '100px'
 
 const firebaseConfig = {
     apiKey: "AIzaSyC0BigqDXq_tmwAWqtGi0FrccEmGpPa6X4",
@@ -37,6 +38,9 @@ const firebaseConfig = {
 
     all_list.append(card)
   });
+
+  all_list.classList.remove('loading')
+
 
   document.getElementById('totalAgent').textContent = count
 
